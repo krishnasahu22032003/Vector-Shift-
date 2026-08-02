@@ -1,0 +1,40 @@
+src/
+│
+├── components/
+│   └── Node/
+│       ├── Node.jsx          ← Generic renderer
+│       ├── NodeHeader.jsx
+│       ├── NodeField.jsx
+│       ├── NodeHandle.jsx
+│       └── NodeContainer.jsx
+│
+├── configs/
+│   ├── input.config.js
+│   ├── output.config.js
+│   ├── text.config.js
+│   ├── llm.config.js
+│   ├── pdf.config.js
+│   ├── webhook.config.js
+│   ├── merge.config.js
+│   └── apiRequest.config.js
+│
+├── nodes/
+│   ├── InputNode.jsx      (5–10 lines)
+│   ├── OutputNode.jsx     (5–10 lines)
+│   ├── TextNode.jsx       (5–10 lines)
+│   ├── LLMNode.jsx        (5–10 lines)
+│   ├── PDFNode.jsx        (5–10 lines)
+│   ├── WebhookNode.jsx    (5–10 lines)
+│   ├── MergeNode.jsx      (5–10 lines)
+│   └── APIRequestNode.jsx (5–10 lines)
+│
+├── hooks/
+│   ├── useNodeState.js
+│   └── useAutoResize.js
+│
+├── services/
+│   └── pipelineApi.js
+│
+└── utils/
+    ├── nodeUtils.js
+    └── variableParser.js
