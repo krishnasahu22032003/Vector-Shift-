@@ -1,77 +1,42 @@
 export const outputConfig = {
+  title: "Output",
 
-    title:"Output",
+  size: {
+    width: 200,
+    height: 80,
+  },
 
-    size:{
+  handles: [
+    {
+      id: "value",
+      type: "target",
+      position: "left",
+    },
+  ],
 
-        width:200,
-
-        height:80
-
+  fields: [
+    {
+      id: "outputName",
+      label: "Name",
+      type: "text",
+      defaultSource: "generatedOutputName",
     },
 
-    handles:{
-
-        left:[
-
-         {
-            id:"value" , 
-            type:"target"       
-        }
-            
-
-        ],
-
-        right:[]
-
-    },
-
-    fields:[
-
+    {
+      id: "outputType",
+      label: "Type",
+      type: "select",
+      defaultValue: "Text",
+      options: [
         {
-
-            id:"inputName",
-
-            label:"Name",
-
-            type:"text",
-
-            defaultSource:"generatedInputName"
-
+          label: "Text",
+          value: "Text",
         },
-
         {
-
-            id:"inputType",
-
-            label:"Type",
-
-            type:"select",
-
-            defaultValue:"Text",
-
-            options:[
-
-                {
-
-                    label:"Text",
-
-                    value:"Text"
-
-                },
-
-                {
-
-                    label:"File",
-
-                    value:"File"
-
-                }
-
-            ]
-
-        }
-
-    ]
-
-}
+          label: "Image",
+          value: "File",
+        },
+      ],
+    },
+  ],
+};

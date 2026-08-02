@@ -1,39 +1,34 @@
 export const llmConfig = {
+  title: "LLM",
 
-    title: "LLM" ,
+  size: {
+    width: 200,
+    height: 80,
+  },
 
-fields: [
+  fields: [],
 
-    ] ,
-
-handles: {
-
-        left: [
-
-            {
-
-                id: "system"
-
-            },
-
-            {
-
-                id: "prompt"
-
-            }
-
-        ],
-
-        right: [
-
-            {
-
-                id: "response"
-
-            }
-
-        ]
-
-    }
-
-}
+  handles: [
+    {
+      id: "system",
+      type: "target",
+      position: "left",
+      style: {
+        top: "33%",
+      },
+    },
+    {
+      id: "prompt",
+      type: "target",
+      position: "left",
+      style: {
+        top: "66%",
+      },
+    },
+    {
+      id: "response",
+      type: "source",
+      position: "right",
+    },
+  ],
+};

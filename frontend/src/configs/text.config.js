@@ -1,15 +1,25 @@
 export const textConfig = {
+  title: "Text",
 
-    title: "Text",
+  size: {
+    width: 200,
+    height: 80,
+  },
 
-    fields: [
+  fields: [
+    {
+      id: "text",
+      label: "Text",
+      type: "textarea",
+      defaultValue: "{{input}}",
+    },
+  ],
 
-        {
-
-            type: "textarea"
-
-        }
-
-    ]
-
+  handles: [
+    {
+      id: "output",
+      type: "source",
+      position: "right",
+    },
+  ],
 };

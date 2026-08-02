@@ -1,81 +1,41 @@
 export const inputConfig = {
+  title: "Input",
 
-    title:"Input",
+  size: {
+    width: 200,
+    height: 80,
+  },
 
-    size:{
-
-        width:200,
-
-        height:80
-
+  fields: [
+    {
+      id: "inputName",
+      label: "Name",
+      type: "text",
+      defaultSource: "generatedInputName",
     },
-
-    handles:{
-
-        left:[
-
-        ],
-
-        right:[
-
-            {
-
-                id:"value",
-
-                type:"source"
-
-            }
-
-        ]
-
-    },
-
-    fields:[
-
+    {
+      id: "inputType",
+      label: "Type",
+      type: "select",
+      defaultValue: "Text",
+      options: [
         {
-
-            id:"inputName",
-
-            label:"Name",
-
-            type:"text",
-
-            defaultSource:"generatedInputName"
-
+          label: "Text",
+          value: "Text",
         },
-
         {
+          label: "File",
+          value: "File",
+        },
+      ],
+    },
+  ],
 
-            id:"inputType",
-
-            label:"Type",
-
-            type:"select",
-
-            defaultValue:"Text",
-
-            options:[
-
-                {
-
-                    label:"Text",
-
-                    value:"Text"
-
-                },
-
-                {
-
-                    label:"File",
-
-                    value:"File"
-
-                }
-
-            ]
-
-        }
-
-    ]
-
-}
+  handles: [
+    {
+      id: "value",
+      type: "source",
+      position: "right",
+    },
+  ],
+};
