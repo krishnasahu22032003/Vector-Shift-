@@ -11,6 +11,7 @@ import {
 export const useStore = create((set, get) => ({
     nodes: [],
     edges: [],
+    nodeIDs: {},
     getNodeID: (type) => {
         const newIDs = {...get().nodeIDs};
         if (newIDs[type] === undefined) {
@@ -40,15 +41,22 @@ export const useStore = create((set, get) => ({
         edges: addEdge({...connection, type: 'smoothstep', animated: true, markerEnd: {type: MarkerType.Arrow, height: '20px', width: '20px'}}, get().edges),
       });
     },
-    updateNodeField: (nodeId, fieldName, fieldValue) => {
-      set({
-        nodes: get().nodes.map((node) => {
-          if (node.id === nodeId) {
-            node.data = { ...node.data, [fieldName]: fieldValue };
-          }
-  
-          return node;
-        }),
-      });
-    },
+updateNodeField: (nodeId, fieldName, fieldValue) => {
+  console.log(get().nodes)
+  set({
+    nodes: get().nodes.map((node) => {
+      if (node.id !== nodeId) {
+        return node;
+      }
+
+      return {
+        ...node,
+        data: {
+          ...node.data,
+          [fieldName]: fieldValue,
+        },
+      };
+    }),
+  });
+},
   }));
