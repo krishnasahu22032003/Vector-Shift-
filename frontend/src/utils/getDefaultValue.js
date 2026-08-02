@@ -1,12 +1,19 @@
+const defaultValueGenerators = {
+  generatedInputName: (field, id, data) =>
+    data[field.id] ?? id.replace("customInput-", "input_"),
+
+  generatedOutputName: (field, id, data) =>
+    data[field.id] ?? id.replace("customOutput-", "output_"),
+};
+
 export function getDefaultValue(field, id, data) {
-  switch (field.defaultSource) {
-    case "generatedInputName":
-      return data[field.id] || id.replace("customInput-", "input_");
+  if (field.defaultSource) {
+    const generator = defaultValueGenerators[field.defaultSource];
 
-    case "generatedOutputName":
-      return data[field.id] || id.replace("customOutput-", "output_");
-
-    default:
-      return data[field.id] ?? field.defaultValue ?? "";
+    if (generator) {
+      return generator(field, id, data);
+    }
   }
+
+  return data[field.id] ?? field.defaultValue ?? "";
 }
