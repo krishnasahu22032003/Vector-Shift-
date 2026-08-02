@@ -2,10 +2,11 @@ import { FileText } from "lucide-react";
 
 export const textConfig = {
   title: "Text",
-  icon:FileText,
+  icon: FileText,
+
   size: {
-    width: 200,
-    height: 80,
+    width: 260,
+    height: 220,
   },
 
   fields: [
@@ -14,6 +15,7 @@ export const textConfig = {
       label: "Text",
       type: "textarea",
       defaultValue: "{{input}}",
+      placeholder: "Type text here...",
     },
   ],
 

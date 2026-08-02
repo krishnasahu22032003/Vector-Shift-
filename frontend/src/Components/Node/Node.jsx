@@ -3,47 +3,60 @@ import NodeField from "./NodeField";
 import NodeHandle from "./NodeHandle";
 import { useNodeState } from "../../hooks/useNodeState";
 import "./Node.css";
+import { useEffect } from "react";
+import { useUpdateNodeInternals } from "reactflow";
 
-const Node = ({ id, data = {}, config }) => {
-    const { values, updateValue } = useNodeState(
-        id,
-        data,
-        config
-    );
-console.log(config.title, config.icon);
-    return (
-        <div
-         className="node"
-            style={{
-                width: config.size.width,
-                minHeight: config.size.height,
-           
-            }}
-        >
-            <NodeHeader
-                title={config.title}
-                subtitle={config.subtitle}
-                icon={config.icon}
-            />
+const Node = ({
+  id,
+  data = {},
+  config,
+  transformConfig,
+}) => {
+  const { values, updateValue } = useNodeState(
+    id,
+    data,
+    config
+  );
 
-            {config.description && (
-                <p>{config.description}</p>
-            )}
-            {config.fields.map((field) => (
-                <NodeField
-                    key={field.id}
-                    field={field}
-                    value={values[field.id]}
-                    onChange={updateValue}
-                />
-            ))}
+  const resolvedConfig = transformConfig
+    ? transformConfig(config, values)
+    : config;
 
-            <NodeHandle
-                id={id}
-                handles={config.handles}
-            />
-        </div>
-    );
+  return (
+    <div
+      className="node"
+      style={{
+        width: resolvedConfig.size.width,
+        minHeight: resolvedConfig.size.height,
+      }}
+    >
+      <NodeHeader
+        title={resolvedConfig.title}
+        subtitle={resolvedConfig.subtitle}
+        icon={resolvedConfig.icon}
+      />
+
+      {resolvedConfig.description && (
+        <p className="node-description">
+          {resolvedConfig.description}
+        </p>
+      )}
+
+      {resolvedConfig.fields.map((field) => (
+        <NodeField
+          key={field.id}
+          field={field}
+          value={values[field.id]}
+          onChange={updateValue}
+        />
+      ))}
+
+      <NodeHandle
+        id={id}
+        handles={resolvedConfig.handles}
+      />
+    </div>
+  );
 };
 
 export default Node;

@@ -10,7 +10,7 @@ import { memoryConfig } from "./configs/memory.config";
 import { mergeConfig } from "./configs/merge.config";
 
 import { DraggableNode } from './draggableNode';
-import toolbarNodes from './utils/toolbarNodes toolbarNodes ';
+import toolbarNodes from './utils/toolbarNodes';
 
 export const PipelineToolbar = () => {
 
