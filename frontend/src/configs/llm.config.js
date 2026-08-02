@@ -1,6 +1,6 @@
 export const llmConfig = {
   title: "LLM",
-
+  description: "This is a LLM.",
   size: {
     width: 200,
     height: 80,
