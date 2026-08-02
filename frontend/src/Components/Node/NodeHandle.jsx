@@ -1,11 +1,5 @@
 import { Handle, Position } from "reactflow";
-
-const positionMap = {
-  left: Position.Left,
-  right: Position.Right,
-  top: Position.Top,
-  bottom: Position.Bottom,
-};
+import { positionMap } from "../../constants/positionMap";
 
 const NodeHandle = ({ id, handles = [] }) => {
   return (
