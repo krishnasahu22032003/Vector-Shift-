@@ -1,47 +1,81 @@
-export const inputNodeConfig = {
-  title: "Input",
+export const inputConfig = {
 
-  styles: {
-    width: 200,
-    height: 80,
-    border: "1px solid black",
-  },
+    title:"Input",
 
-  fields: [
-    {
-      id: "inputName",
-      label: "Name",
-      type: "text",
-      defaultValue: ({ id, data }) =>
-        data?.inputName || id.replace("customInput-", "input_"),
+    size:{
+
+        width:200,
+
+        height:80
+
     },
-    {
-      id: "inputType",
-      label: "Type",
-      type: "select",
-      defaultValue: ({ data }) => data?.inputType || "Text",
-      options: [
-        {
-          label: "Text",
-          value: "Text",
-        },
-        {
-          label: "File",
-          value: "File",
-        },
-      ],
+
+    handles:{
+
+        left:[
+
+        ],
+
+        right:[
+
+            {
+
+                id:"value",
+
+                type:"source"
+
+            }
+
+        ]
+
     },
-  ],
 
-  handles: {
-    inputs: [],
+    fields:[
 
-    outputs: [
-      {
-        id: "value",
-        type: "source",
-        position: "right",
-      },
-    ],
-  },
-};
+        {
+
+            id:"inputName",
+
+            label:"Name",
+
+            type:"text",
+
+            defaultSource:"generatedInputName"
+
+        },
+
+        {
+
+            id:"inputType",
+
+            label:"Type",
+
+            type:"select",
+
+            defaultValue:"Text",
+
+            options:[
+
+                {
+
+                    label:"Text",
+
+                    value:"Text"
+
+                },
+
+                {
+
+                    label:"File",
+
+                    value:"File"
+
+                }
+
+            ]
+
+        }
+
+    ]
+
+}
