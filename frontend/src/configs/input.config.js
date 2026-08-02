@@ -4,8 +4,8 @@ export const inputConfig = {
   title: "Input",
   icon:ArrowRightToLine ,
   size: {
-    width: 200,
-    height: 80,
+    width: 260,
+    height: 260,
   },
 
   fields: [

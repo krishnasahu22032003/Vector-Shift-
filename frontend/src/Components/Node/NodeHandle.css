@@ -1,0 +1,37 @@
+.node-handle {
+  width: 12px !important;
+  height: 12px !important;
+
+  background: var(--color-primary) !important;
+
+  border: 2px solid var(--color-surface) !important;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.node-handle:hover {
+  transform: scale(1.3);
+
+  box-shadow: 0 0 14px rgba(99, 102, 241, 0.55);
+
+  cursor: crosshair;
+}
+
+.node-handle.connecting {
+  transform: scale(1.4);
+
+  background: var(--color-secondary);
+}
+
+.node-handle.valid {
+  background: var(--color-success);
+}
+
+.node-handle.invalid {
+  background: var(--color-danger);
+}

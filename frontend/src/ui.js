@@ -17,8 +17,9 @@ import { APINode } from './nodes/apiNode';
 import { MemoryNode } from './nodes/memoryNode';
 import { MergeNode } from './nodes/mergeNode';
 import { PDFNode } from './nodes/pdfNode';
+import { SubmitButton } from './Components/Submit/SubmitButton';
 
-const gridSize = 20;
+const gridSize = 24;
 const proOptions = { hideAttribution: true };
 const nodeTypes = {
   customInput: InputNode,
@@ -100,7 +101,10 @@ export const PipelineUI = () => {
 
     return (
         <>
-        <div ref={reactFlowWrapper} style={{width: '100wv', height: '70vh'}}>
+        <div
+className="canvas"
+ref={reactFlowWrapper}
+>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -115,10 +119,23 @@ export const PipelineUI = () => {
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
             >
-                <Background color="#aaa" gap={gridSize} />
-                <Controls />
-                <MiniMap />
+               <Background
+    color="#273449"
+    gap={24}
+    size={1}
+/>
+                <Controls
+    position="bottom-left"
+    showInteractive
+/>
+       <MiniMap
+    pannable
+    zoomable
+    nodeStrokeWidth={3}
+     maskColor="rgba(11,16,32,.75)"
+/>
             </ReactFlow>
+            <SubmitButton/>
         </div>
         </>
     )

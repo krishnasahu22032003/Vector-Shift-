@@ -1,0 +1,121 @@
+.canvas{
+
+    position:relative;
+
+    width:100%;
+
+    flex:1;
+
+    overflow:hidden;
+
+    background:var(--color-bg);
+
+}
+.react-flow__controls{
+
+    left:20px!important;
+
+    bottom:90px!important;
+
+}
+
+.react-flow__controls-button {
+    width: 36px;
+    height: 36px;
+
+    background: transparent !important;
+    color: white !important;
+    border-bottom: 1px solid var(--color-border) !important;
+}
+
+.react-flow__controls-button svg {
+    fill: white;
+    color: white;
+}
+
+.react-flow__controls-button:hover {
+    background: var(--color-surface-light) !important;
+}
+
+.react-flow__minimap{
+
+    right:20px!important;
+
+    bottom:60px!important;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.react-flow__selection{
+
+    border:2px dashed var(--color-primary)!important;
+
+    background:rgba(99,102,241,.08)!important;
+
+}
+
+.react-flow__edge-path{
+
+    stroke:#6366F1;
+
+    stroke-width:2;
+
+}
+
+.react-flow__edge-path{
+
+    stroke:#6366F1;
+
+    stroke-width:2;
+
+}
+
+
+.react-flow__edge-path{
+
+    stroke-linecap:round;
+
+}
+
+
+.react-flow__connection-path{
+
+    stroke:#6366F1;
+
+    stroke-width:2;
+
+}
+
+.react-flow__node.selected .node {
+  border-color: var(--color-primary);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 0 2px rgba(99, 102, 241, 0.35),
+    0 18px 48px rgba(99, 102, 241, 0.28);
+}
+
+
+.react-flow__handle {
+  width: 12px;
+
+  height: 12px;
+
+  background: var(--color-primary);
+
+  border: 2px solid white;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.25);
+
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.55);
+}

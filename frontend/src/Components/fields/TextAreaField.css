@@ -1,0 +1,60 @@
+.node-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.node-field label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--color-text-secondary);
+}
+
+.node-field textarea {
+  width: 100%;
+
+  min-height: 90px;
+
+  padding: 10px 12px;
+
+  background: var(--color-surface-light);
+
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 10px;
+
+  resize: none;
+
+  outline: none;
+
+  line-height: 1.6;
+
+  font-family: inherit;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+.node-field textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.node-field textarea:hover {
+  border-color: rgba(99,102,241,.45);
+}
+
+.node-field textarea:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(99,102,241,.18);
+
+  transform: translateY(-1px);
+}

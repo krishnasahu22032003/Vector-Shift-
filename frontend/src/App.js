@@ -1,15 +1,16 @@
 import { PipelineUI } from './ui';
-import { SubmitButton } from './submit';
+import { SubmitButton } from './Components/Submit/SubmitButton';
 import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <PipelineUI />
-      <SubmitButton />
-    </div>
-  );
+<div className="app">
+    <Navbar />
+
+    <PipelineUI />
+
+</div>
+  )
 }
 
 export default App;
