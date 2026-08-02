@@ -1,34 +1,15 @@
-import { useState } from "react";
-import { useStore } from "../../store";
 import NodeHeader from "./NodeHeader";
 import NodeField from "./NodeField";
 import NodeHandle from "./NodeHandle";
+import { useNodeState } from "../../hooks/useNodeState";
 
-import { getDefaultValue } from "../../utils/getDefaultValue";
 
 const Node = ({ id, data = {}, config }) => {
-  const [values, setValues] = useState(() => {
-    const initialValues = {};
-
-    config.fields.forEach((field) => {
-      initialValues[field.id] = getDefaultValue(field, id, data);
-    });
-
-    return initialValues;
-  });
-
-  const updateNodeField = useStore(
-    (state) => state.updateNodeField
-);
-
-const updateValue = (fieldId, value) => {
-    setValues(prev => ({
-        ...prev,
-        [fieldId]: value,
-    }));
-
-    updateNodeField(id, fieldId, value);
-};
+  const { values, updateValue } = useNodeState(
+    id,
+    data,
+    config
+  );
 
   return (
     <div
