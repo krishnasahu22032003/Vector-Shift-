@@ -55,7 +55,7 @@ onConnect: (connection) => {
   });
 },
 updateNodeField: (nodeId, fieldName, fieldValue) => {
-  console.log(get().nodes)
+
   set({
     nodes: get().nodes.map((node) => {
       if (node.id !== nodeId) {

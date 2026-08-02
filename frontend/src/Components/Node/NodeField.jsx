@@ -1,7 +1,7 @@
 import { fieldRenderers } from "../fieldRenderers";
 
 const NodeField = ({ field, value, onChange }) => {
-  console.log("NodeField:", field);
+
 
   const FieldComponent = fieldRenderers[field.type];
 
