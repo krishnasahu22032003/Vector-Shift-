@@ -1,6 +1,8 @@
+import { Link } from "lucide-react";
+
 export const apiConfig = {
   title: "API Request",
-
+  icon: Link,
   description: "Calls an external API.",
 
   size: {

@@ -1,4 +1,6 @@
-const NodeHeader = ({ title, icon, subtitle }) => {
+const NodeHeader = ({ title, icon:Icon, subtitle }) => {
+    console.log("NodeHeader Rendered");
+    console.log(title, Icon);
   return (
     <div
       style={{
@@ -10,8 +12,7 @@ const NodeHeader = ({ title, icon, subtitle }) => {
         marginBottom: "12px",
       }}
     >
-      {icon && <span>{icon}</span>}
-
+       {Icon && <Icon size={18} />}
       <div>
         <div
           style={{

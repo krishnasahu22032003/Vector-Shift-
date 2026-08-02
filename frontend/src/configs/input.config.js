@@ -1,6 +1,8 @@
+import { ArrowRightToLine } from "lucide-react";
+
 export const inputConfig = {
   title: "Input",
-
+  icon:ArrowRightToLine ,
   size: {
     width: 200,
     height: 80,

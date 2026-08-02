@@ -1,11 +1,11 @@
-import { PipelineToolbar } from './toolbar';
 import { PipelineUI } from './ui';
 import { SubmitButton } from './submit';
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
     <div>
-      <PipelineToolbar />
+      <Navbar />
       <PipelineUI />
       <SubmitButton />
     </div>

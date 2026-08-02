@@ -10,7 +10,7 @@ const Node = ({ id, data = {}, config }) => {
         data,
         config
     );
-
+console.log(config.title, config.icon);
     return (
         <div
             style={{
@@ -25,6 +25,7 @@ const Node = ({ id, data = {}, config }) => {
                 subtitle={config.subtitle}
                 icon={config.icon}
             />
+
             {config.description && (
                 <p>{config.description}</p>
             )}

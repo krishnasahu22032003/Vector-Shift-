@@ -1,21 +1,30 @@
 // toolbar.js
+import { inputConfig } from './configs/input.config';
+import { outputConfig } from './configs/output.config';
+import { llmConfig } from './configs/llm.config';
+import { textConfig } from './configs/text.config';
+import { pdfConfig } from "./configs/pdf.config";
+import { webSearchConfig } from "./configs/webSearch.config";
+import { apiConfig } from "./configs/api.config";
+import { memoryConfig } from "./configs/memory.config";
+import { mergeConfig } from "./configs/merge.config";
 
 import { DraggableNode } from './draggableNode';
+import toolbarNodes from './utils/toolbarNodes toolbarNodes ';
 
 export const PipelineToolbar = () => {
 
     return (
         <div style={{ padding: '10px' }}>
             <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                <DraggableNode type='customInput' label='Input' />
-                <DraggableNode type='llm' label='LLM' />
-                <DraggableNode type='customOutput' label='Output' />
-                <DraggableNode type='text' label='Text' />
-                <DraggableNode type="pdf" label="PDF" />
-                <DraggableNode type="webSearch" label="Web Search" />
-                <DraggableNode type="api" label="API" />
-                <DraggableNode type="memory" label="Memory" />
-                <DraggableNode type="merge" label="Merge" />
+                {toolbarNodes.map(({ type, config }) => (
+                    <DraggableNode
+                        key={type}
+                        type={type}
+                        label={config.title}
+                        icon={config.icon}
+                    />
+                ))}
             </div>
         </div>
     );

@@ -1,6 +1,8 @@
+import { Globe } from "lucide-react";
+
 export const webSearchConfig = {
   title: "Web Search",
-
+  icon:Globe,
   description: "Searches the web.",
 
   size: {

@@ -1,6 +1,8 @@
-export const mergeConfig = {
-  title: "Merge",
+import { GitMerge } from "lucide-react";
 
+export const mergeConfig = { 
+  title: "Merge",
+icon: GitMerge,
   description: "Combines multiple inputs.",
 
   size: {

@@ -1,5 +1,8 @@
+import { ArrowLeftToLine } from "lucide-react";
+
 export const outputConfig = {
   title: "Output",
+  icon:ArrowLeftToLine,
 
   size: {
     width: 200,

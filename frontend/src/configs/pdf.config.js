@@ -1,6 +1,8 @@
+import { File } from "lucide-react";
+
 export const pdfConfig = {
   title: "PDF Loader",
-
+  icon:File ,
   description: "Loads a PDF document.",
 
   size: {

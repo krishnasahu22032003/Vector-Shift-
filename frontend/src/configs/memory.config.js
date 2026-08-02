@@ -1,6 +1,8 @@
+import { Database } from "lucide-react";
+
 export const memoryConfig = {
   title: "Memory",
-
+   icon: Database,
   description: "Stores conversation context.",
 
   size: {
