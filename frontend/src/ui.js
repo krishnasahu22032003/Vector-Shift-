@@ -12,6 +12,11 @@ import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 
 import 'reactflow/dist/style.css';
+import { WebSearchNode } from './nodes/webSearchNode';
+import { APINode } from './nodes/apiNode';
+import { MemoryNode } from './nodes/memoryNode';
+import { MergeNode } from './nodes/mergeNode';
+import { PDFNode } from './nodes/pdfNode';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -19,7 +24,12 @@ const nodeTypes = {
   customInput: InputNode,
   llm: LLMNode,
   customOutput: OutputNode,
-  text: TextNode,
+  text: TextNode,  
+  pdf: PDFNode,
+  webSearch: WebSearchNode,
+  api: APINode,
+  memory: MemoryNode,
+  merge: MergeNode,
 };
 
 const selector = (state) => ({
