@@ -1,4 +1,4 @@
-export const inputConfig = {
+export const llmConfig = {
 
     title: "LLM" ,
 
